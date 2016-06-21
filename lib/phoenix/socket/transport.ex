@@ -349,7 +349,7 @@ defmodule Phoenix.Socket.Transport do
     import Plug.Conn
     origin       = get_req_header(conn, "origin") |> List.first
     check_origin = check_origin_config(handler, endpoint, opts)
-    Logger.warn(inspect(System.stacktrace)
+    Logger.warn(inspect(System.stacktrace))
     cond do
       is_nil(origin) or check_origin == false ->
         conn
